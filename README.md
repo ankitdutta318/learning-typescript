@@ -1,32 +1,37 @@
 # learning-typescript
-This repository server as a simple guide to Typescript
+## This repository server as a simple guide to Typescript
 
 
-This guide is still being developed
+### This guide is still being developed
 
-A step by step guide to setting up Typescript.
+A step by step guide to setting up [Typescript](https://www.typescriptlang.org).
 
 Install with npm
-
+```bash
 $ npm install -g typescript
 $ npm install -g webpack
 $ npm install -g ts-loader // links webpack to complie typescript
 $ npm install -g jquery  // to use jquery in your project
 $ npm install -g http-server // to have a local server run
+```
 ==========
 
-Configure Typescript
+#### Configure [Typescript](https://www.typescriptlang.org)
 
-Create new Typescript file main.ts:
-
+1. Create new Typescript file **main.ts**:
+```language-typescript
  class SweetSweetClass {
      constructor() { 
          console.log("Even sweeter")
      }
  }
  let basil = new SweetSweetClass()
-Setup tsconfig.json:
+ ```
+ 
+ 
+2. Setup **tsconfig.json**:
 
+```language-JSON
  {
    "compilerOptions": {
      "module": "commonjs",
@@ -43,14 +48,20 @@ Setup tsconfig.json:
        "**/*.spec.ts"
    ]
  }
-Run:
+ ```
+ 
+3. Run:
 
+ ```bash
  $ tsc 
  $ tsc --watch
-Notice that the directory dist and the file main.js were created.
+ ```
+ 
+Notice that the directory dist and the file **main.js** were created.
 
-Setup HTML Page:
+4. Setup HTML Page:
 
+```html
  <!DOCTYPE html>
  <html>
  <head>
@@ -60,19 +71,26 @@ Setup HTML Page:
  <script src='/dist/main.js'></script>
  </body>
  </html>
-Run:
-
+ ```
+ 
+5. Run:
+```
  $ http-server -c-1
+```
 or
-
+```
  $ http-server
-Using the flag -c-1 makes the browser never cache the files.
+```
 
-Open up the Javascript Console and find the statement "Even sweeter"
+Using the flag *-c-1* makes the browser never cache the files.
 
-Run & Compile with Webpack
+6. Open up the **Javascript** Console and find the statement "Even sweeter"
 
-Setup webpack.config.js:
+#### Run & Compile with Webpack
+
+1. Setup **webpack.config.js**:
+
+```language-javascript
 
  var path = require('path');
 
@@ -91,23 +109,34 @@ Setup webpack.config.js:
      path: path.resolve(__dirname, 'dist')
    }
  }
-Run webpack:
+ ```
+ 
+2. Run webpack:
 
 Non minified
 
+``` language-bash
  $ webpack --watch
+```
 As minified
 
+```
  $ webpack --watch --optimize-minimize
-Add new Typescript file called getcoffee.ts:
+```
 
+3. Add new [Typescript] (https://www.typescriptlang.org) file called **getcoffee.ts**:
+
+```language-javascript
  export class MustHaveCoffee {
      constructor() { 
          console.log("yeah me too!")
      }
  }
-Open main.ts:
+ ```
+ 
+4. Open **main.ts**:
 
+```language-typescript
  import {MustHaveCoffee} from "./getcoffee"
 
  class SweetSweetClass {
@@ -118,8 +147,11 @@ Open main.ts:
 
  let basil = new SweetSweetClass()
  let coffee = new MustHaveCoffee()
-Update index.html:
+ ```
+ 
+5. Update **index.html**:
 
+```language-html
  <!DOCTYPE html>
  <html>
  <head>
@@ -129,19 +161,30 @@ Update index.html:
  <script src='/dist/bundle.js'></script>
  </body>
  </html>
-Include jQuery with Typings
+ ```
+ 
+#### Include jQuery with Typings
 
-Install typings:
+1. Install **typings**:
 
+```language-bash
  $ npm install typings -g
-In your project, run:
+```
 
+2. In your project, run:
+
+ ```language-bash
  $ typings install dt~jquery --global --save
-Run:
+```
 
+3. Run:
+```
  $ typings install
-Update tsconfig.json:
+```
 
+4. Update **tsconfig.json**:
+
+```json
  {
    "compilerOptions": {
      "module": "commonjs",
@@ -159,8 +202,11 @@ Update tsconfig.json:
        "**/*.spec.ts"
    ]
  }
-Import jQuery in main.ts
+ ```
+ 
+5. Import jQuery in **main.ts**
 
+```typescript
  import * as $ from "jquery";
  import {MustHaveCoffee} from "./getcoffee"
 
@@ -173,4 +219,5 @@ Import jQuery in main.ts
 
  let basil = new SweetSweetClass()
  let coffee = new MustHaveCoffee()
+ ```
 jQuery works!
