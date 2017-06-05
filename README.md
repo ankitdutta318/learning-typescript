@@ -19,7 +19,7 @@ $ npm install -g http-server // to have a local server run
 #### Configure [Typescript](https://www.typescriptlang.org)
 
 1. Create new Typescript file **main.ts**:
-```language-typescript
+```typescript
  class SweetSweetClass {
      constructor() { 
          console.log("Even sweeter")
@@ -31,7 +31,7 @@ $ npm install -g http-server // to have a local server run
  
 2. Setup **tsconfig.json**:
 
-```language-JSON
+```ljson
  {
    "compilerOptions": {
      "module": "commonjs",
@@ -74,11 +74,11 @@ Notice that the directory dist and the file **main.js** were created.
  ```
  
 5. Run:
-```
+```bash
  $ http-server -c-1
 ```
 or
-```
+```bash
  $ http-server
 ```
 
@@ -90,7 +90,7 @@ Using the flag *-c-1* makes the browser never cache the files.
 
 1. Setup **webpack.config.js**:
 
-```language-javascript
+```javascript
 
  var path = require('path');
 
@@ -115,18 +115,18 @@ Using the flag *-c-1* makes the browser never cache the files.
 
 Non minified
 
-``` language-bash
+``` bash
  $ webpack --watch
 ```
 As minified
 
-```
+```bash
  $ webpack --watch --optimize-minimize
 ```
 
-3. Add new [Typescript] (https://www.typescriptlang.org) file called **getcoffee.ts**:
+3. Add new [Typescript](https://www.typescriptlang.org) file called **getcoffee.ts**:
 
-```language-javascript
+```javascript
  export class MustHaveCoffee {
      constructor() { 
          console.log("yeah me too!")
@@ -136,7 +136,7 @@ As minified
  
 4. Open **main.ts**:
 
-```language-typescript
+```typescript
  import {MustHaveCoffee} from "./getcoffee"
 
  class SweetSweetClass {
@@ -151,7 +151,7 @@ As minified
  
 5. Update **index.html**:
 
-```language-html
+```html
  <!DOCTYPE html>
  <html>
  <head>
@@ -167,7 +167,7 @@ As minified
 
 1. Install **typings**:
 
-```language-bash
+```bash
  $ npm install typings -g
 ```
 
@@ -178,7 +178,7 @@ As minified
 ```
 
 3. Run:
-```
+```bash
  $ typings install
 ```
 
